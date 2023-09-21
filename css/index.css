@@ -65,26 +65,35 @@ body {
 }
 
 .search-bar input {
+  width: 300px;
   margin-top: 10px;
   margin-right: 10px;
   padding: 5px 0;
-  background-color: #D8D9DA;
+  background-color: #d8d9da;
   border: none;
   border-radius: 40px;
 }
 
-.search-bar input[type='text']::placeholder{
-    text-align: center;
+.search-bar input[type="text"]::placeholder {
+  text-align: center;
 }
 
-.search-bar button img{
-    width: 20px;
+.search-bar button img {
+  width: 20px;
 }
 
-.search-bar button{
-    border-radius: 100%;
-    padding: 5px;
-    border-color: transparent;
-    margin-top: 10px;
+.search-bar button {
+  border-radius: 100%;
+  padding: 5px;
+  border-color: transparent;
+  margin-top: 10px;
 }
 
+/* Current Weather topic */
+.current-weather-topic{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    color: #fff;
+    font-weight: 800;
+}
