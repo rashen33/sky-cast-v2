@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Styles for Navbar */
+
+.navbar{
+    background-color: #55B5FF;
+    /* border-radius: 40px; */
+    /* margin-top: 10px; */
+}
+
+.navbar-brand{
+    color: #fff;
+    font-weight: 800;
+}
+
+.navbar-toggler{
+    margin-right: 5px;
+}
+
+.nav-item a{
+    color: #fff;
+    margin: 0 10px;
+}
+
+.navbar-collapse{
+    display: flex;
+    flex-grow: 0;
+    justify-content: flex-end;
+}
