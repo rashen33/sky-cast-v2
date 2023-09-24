@@ -45,7 +45,7 @@ body {
 .left-container {
   width: 50%;
   height: 100vh;
-  background-color: bisque; 
+  background-color: bisque;
 }
 
 /* Current Weather */
@@ -101,7 +101,7 @@ body {
 }
 
 /* Main detail card */
-.main-detail-card{
+.main-detail-card {
   display: flex;
 }
 
@@ -137,32 +137,73 @@ body {
 }
 
 /* Temp and other infor in the main card */
-.temp-humidity-ws-card{
+.temp-humidity-ws-card {
   display: flex;
   flex-direction: column;
   width: 200px;
   height: 230px;
-  background-color: rgb(211, 0, 0);
+  /* background-color: rgb(211, 0, 0); */
   margin: 10px 54px 36px;
 }
 
 /* Temparature */
-.temp{
+.temp {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 44px;
 }
 
-.temp h1{
-  font-size: 58px;
-  margin: 10px;
+.temp h1 {
+  font-size: 50px;
   color: #fff;
 }
 
-
-
-.humitity-ws{
+/* Humidity and Wind speed card */
+.humitity-ws {
   display: flex;
   justify-content: space-between;
 }
 
+/* Humidity */
+.humidity {
+  display: flex;
+}
+
+.humidity img {
+  width: 40px;
+  height: 35px;
+  margin-top: 76px;
+  margin-right: 15px;
+}
+
+.humidity p {
+  color: white;
+  margin-top: 76px;
+  font-size: 18px;
+}
+
+.text{
+  display: flex;
+  flex-direction: column;
+}
+
+/* Wind Speed */
+.wind-speed {
+  display: flex;
+  margin-right: 5px;
+}
+
+.wind-speed img {
+  width: 46px;
+  height: 44px;
+  margin-left: 10px;
+  margin-top: 76px;
+  margin-right: 15px;
+}
+
+.wind-speed p {
+  color: white;
+  margin-top: 76px;
+  font-size: 18px;
+}
