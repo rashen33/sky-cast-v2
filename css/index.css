@@ -45,7 +45,7 @@ body {
 .left-container {
   width: 50%;
   height: 100vh;
-  background-color: bisque;
+  background-color: bisque; 
 }
 
 /* Current Weather */
@@ -100,6 +100,11 @@ body {
   font-weight: 800;
 }
 
+/* Main detail card */
+.main-detail-card{
+  display: flex;
+}
+
 /* Weather icon card  */
 
 .weather-icon-card {
@@ -131,4 +136,33 @@ body {
   font-size: 25px;
 }
 
-/* Rest of the code goes here */
+/* Temp and other infor in the main card */
+.temp-humidity-ws-card{
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 230px;
+  background-color: rgb(211, 0, 0);
+  margin: 10px 54px 36px;
+}
+
+/* Temparature */
+.temp{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.temp h1{
+  font-size: 58px;
+  margin: 10px;
+  color: #fff;
+}
+
+
+
+.humitity-ws{
+  display: flex;
+  justify-content: space-between;
+}
+
