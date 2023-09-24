@@ -253,15 +253,6 @@ body {
   margin: 10px 0px 10px 20px;
 }
 
-/* For each component of the forecast */
-
-.forcast-comp{
-  width: 200px;
-  height: 120px;
-  background-color: #4b3535;
-  margin: auto;
-}
-
 /* For all the components of the forecast */
 
 .forcast-comp-container{
@@ -270,6 +261,16 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+/* For each component of the forecast */
+
+.forcast-comp{
+  width: 200px;
+  height: 120px;
+  /* background-color: #4b3535; */
+  margin: auto;
+}
+
 
 .comp-topic{
   color: #fff;
