@@ -247,7 +247,7 @@ body {
 
 /* Topic */
 
-.forecast .topic{
+.container .topic{
   color: #fff;
   font-weight: bold;
   margin: 10px 0px 10px 20px;
@@ -267,7 +267,7 @@ body {
 .forcast-comp{
   width: 200px;
   height: 120px;
-  /* background-color: #4b3535; */
+  background-color: #4b3535;
   margin: auto;
 }
 
@@ -294,4 +294,20 @@ body {
 
 .hum-ws p{
   margin: 0.5px 0;
+}
+
+/* Weather History */
+
+.history-comp{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100px;
+  height: 120px;
+  background-color: #4b3535;
+  margin: auto;
+}
+
+.img-history img{
+  width: 100px;
 }
