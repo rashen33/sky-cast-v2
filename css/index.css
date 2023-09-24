@@ -55,7 +55,7 @@ body {
   height: 382px;
   background-color: #55b5ff;
   border-radius: 40px;
-  margin: 40px 0 38px 38px;
+  margin: 20px 0 20px 40px;
 }
 
 /* Search Bar and button */
@@ -207,4 +207,13 @@ body {
   color: white;
   margin-top: 76px;
   font-size: 18px;
+}
+
+/* Weather map */
+.weather-map {
+  width: 542px;
+  height: 282px;
+  background-color: #55b5ff;
+  border-radius: 40px;
+  margin: 5px 0 38px 38px;
 }
