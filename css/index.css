@@ -43,7 +43,7 @@ body {
 /* Left Container */
 
 .left-container {
-  width: 50%;
+  width: 40%;
   height: 100vh;
   background-color: bisque;
 }
@@ -184,7 +184,7 @@ body {
   font-size: 18px;
 }
 
-.text{
+.text {
   display: flex;
   flex-direction: column;
 }
@@ -216,4 +216,25 @@ body {
   background-color: #55b5ff;
   border-radius: 40px;
   margin: 5px 0 38px 38px;
+}
+
+#sec-1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.right-container {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  height: 100vh;
+  background-color: aliceblue;
+}
+
+.container{
+  width: 810px;
+  height: 210px;
+  background-color: #55b5ff;
+  border-radius: 40px;
+  margin: 20px auto 5px; 
 }
