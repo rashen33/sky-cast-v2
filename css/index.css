@@ -45,7 +45,7 @@ body {
 .left-container {
   width: 40%;
   height: 100vh;
-  background-color: bisque;
+  /* background-color: bisque; */
 }
 
 /* Current Weather */
@@ -232,7 +232,7 @@ body {
   flex-direction: column;
   width: 60%;
   height: 100vh;
-  background-color: aliceblue;
+  /* background-color: aliceblue; */
 }
 
 /* All contaiers at the right */
@@ -267,7 +267,7 @@ body {
 .forcast-comp{
   width: 200px;
   height: 120px;
-  background-color: #4b3535;
+  /* background-color: #4b3535; */
   margin: auto;
 }
 
@@ -304,7 +304,7 @@ body {
   justify-content: center;
   width: 100px;
   height: 120px;
-  background-color: #4b3535;
+  /* background-color: #4b3535; */
   margin: auto;
 }
 
