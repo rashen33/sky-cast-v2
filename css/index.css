@@ -48,8 +48,6 @@ body {
   /* background-color: bisque; */
 }
 
-/* Current Weather */
-
 .current-weather {
   width: 542px;
   height: 382px;
@@ -97,7 +95,7 @@ body {
   justify-content: space-between;
 }
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 390px) {
   .first-page-container {
     display: flex;
     flex-wrap: wrap;
@@ -326,4 +324,33 @@ body {
 
 .img-history img{
   width: 100px;
+}
+
+/* Pricing  */
+
+#pricing{
+  width: auto;
+  height: 100vh;
+  padding: 20px;
+  margin: auto auto;
+}
+
+#pricing h2{
+  color: white;
+  margin-left: 20px;
+  font-weight: bold;
+  padding: 20px;
+}
+
+.row{
+  margin: auto auto;
+}
+
+.card{
+  border-radius: 40px;
+  background-color: #55b5ff;
+}
+
+.card-header, .card-body{
+  color: white;
 }
