@@ -90,6 +90,20 @@ body {
   margin-top: 10px;
 }
 
+/* First page container */
+.first-page-container{
+  display: flex;
+  gap: 70px;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 1400px) {
+  .first-page-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
 /* Current Weather topic */
 
 .current-weather-topic {
@@ -222,6 +236,7 @@ body {
 
 #sec-1 {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
@@ -234,6 +249,7 @@ body {
   height: 100vh;
   /* background-color: aliceblue; */
 }
+
 
 /* All contaiers at the right */
 
