@@ -354,3 +354,29 @@ body {
 .card-header, .card-body{
   color: white;
 }
+
+/* Contact Us */
+#contact-us{
+  width: auto;
+  height: 100vh;
+}
+
+#contact-us h2{
+  padding: 20px;
+}
+
+.contact-us-form{
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  margin: auto auto;
+}
+
+.contact-us-form input{
+  margin: 10px 0;
+  padding: 5px;
+}
+
+.contact-us-form button{
+  margin:10px 0;
+}
