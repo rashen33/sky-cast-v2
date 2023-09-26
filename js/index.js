@@ -9,6 +9,7 @@ const searchTxt = $("#search-bar");
 const searchBtn = $("#search-btn");
 const weatherIcon = $("#weather-icon");
 const searchedCity = $("#searched-city");
+const weatherDesc = $(".weather-desc");
 
 function clicked(){
     $.ajax({
@@ -18,6 +19,7 @@ function clicked(){
            console.log(resp);
            searchedCity.html(resp.location.name);
            weatherIcon.attr("src",resp.current.condition.icon);
+           weatherDesc.html(resp.current.condition.text);   
         }
      });
 }
