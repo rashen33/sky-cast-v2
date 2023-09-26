@@ -382,3 +382,9 @@ body {
 .contact-us-form button{
   margin:10px 0;
 }
+
+.footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
