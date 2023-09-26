@@ -359,10 +359,12 @@ body {
 #contact-us{
   width: auto;
   height: 100vh;
+  color: #fff;
 }
 
 #contact-us h2{
   padding: 20px;
+  margin: 20px;
 }
 
 .contact-us-form{
