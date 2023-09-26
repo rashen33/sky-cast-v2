@@ -1,1 +1,23 @@
 "use strict";
+
+// Taking the current data
+
+const apiKey = "6bac593baa7c4af4b82154952231909";
+const apiURL = "http://api.weatherapi.com/v1/current.json?Key="
+
+const searchTxt = $("#search-bar");
+const searchBtn = $("#search-btn");
+const weatherIcon = $("#weather-icon");
+const searchedCity = $("#searched-city");
+
+function clicked(){
+    $.ajax({
+        method : "GET",
+        url: "http://api.weatherapi.com/v1/current.json?key=" + apiKey + `&q=${searchTxt.val()}`,
+        success : (resp) => {
+           console.log(resp);
+           searchedCity.html(resp.location.name);
+           weatherIcon.attr("src",resp.current.condition.icon);
+        }
+     });
+}

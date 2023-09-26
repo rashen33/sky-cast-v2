@@ -46,8 +46,8 @@
         <div class="current-weather">
           <!-- Search Bar -->
           <div class="search-bar">
-            <input type="text" placeholder="search city">
-            <button> <img src="assets/search.png" alt="search"></button>
+            <input type="text" placeholder="search city" id="search-bar">
+            <button id="search-btn" onclick="clicked()"> <img src="assets/search.png" alt="search"></button>
           </div>
   
           <div class="current-weather-topic">
@@ -59,9 +59,9 @@
             <!-- Now weather section -->
             <div class="weather-icon-card">
               <div class="weather-details">
-                <img src="assets/113.png" alt="weather-icon">
+                <img src="assets/113.png" alt="weather-icon" id="weather-icon">
                 <p class="weather-desc">Partly cloudy</p>
-                <p class="city">Negombo</p>
+                <p class="city" id="searched-city">Negombo</p>
                 <p class="date-and-time">2023-09-20 18:37</p>
               </div>
   
@@ -352,7 +352,8 @@
 
 
 
-
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+  crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
