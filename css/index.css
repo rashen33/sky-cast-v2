@@ -15,6 +15,7 @@ body {
 /* Styles for Navbar */
 
 .navbar {
+  position: sticky;
   background-color: #55b5ff;
   border-radius: 40px;
   margin-top: 15px;
