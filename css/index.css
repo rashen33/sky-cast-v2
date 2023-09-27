@@ -98,12 +98,22 @@ body {
   align-items: center;
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 1300px) {
   .first-page-container {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
   }
+
+  .right-container{
+    margin-top: 40px;
+  }
+
+  .left-container{
+    flex-direction: row;
+  }
+
 }
+
 
 /* Current Weather topic */
 
@@ -355,6 +365,7 @@ body {
 #contact-us{
   width: auto;
   height: 100vh;
+  display: flex;
   color: #fff;
 }
 
@@ -390,4 +401,27 @@ body {
 .first-row{
   display: flex;
   justify-content:space-between;
+}
+
+#map{
+  border-radius: 40px;
+}
+
+.air-qulity{
+  color: #fff;
+}
+
+.data{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.sub-data{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
 }
