@@ -45,6 +45,9 @@ body {
 /* Left Container */
 
 .left-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 40%;
   height: 100vh;
   /* background-color: bisque; */
@@ -55,7 +58,7 @@ body {
   height: 382px;
   background-color: #55b5ff;
   border-radius: 40px;
-  margin: 20px 54px 20px 38px;
+  margin: 20px auto 20px auto;
 }
 
 /* Search Bar and button */
@@ -110,6 +113,8 @@ body {
 
   .left-container{
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
 
 }
@@ -240,7 +245,7 @@ body {
   height: 282px;
   background-color: #55b5ff;
   border-radius: 40px;
-  margin: 5px 0 38px 38px;
+  margin: 20px auto 20px auto;
 }
 
 
