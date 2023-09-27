@@ -55,6 +55,7 @@ body {
   height: 382px;
   background-color: #55b5ff;
   border-radius: 40px;
+  margin: 20px 54px 20px 38px;
 }
 
 /* Search Bar and button */
@@ -94,6 +95,7 @@ body {
   display: flex;
   gap: 70px;
   justify-content: space-between;
+  align-items: center;
 }
 
 @media screen and (max-width: 390px) {
@@ -108,7 +110,7 @@ body {
 .current-weather-topic {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 10px;
   color: #fff;
   font-weight: 800;
 }
@@ -231,13 +233,6 @@ body {
   margin: 5px 0 38px 38px;
 }
 
-/* Section 1 */
-
-#sec-1 {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
 
 /* Right container */
 
