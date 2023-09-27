@@ -5,7 +5,7 @@ var map;
 var geocoder;
 function InitializeMap(lat,lon) {
 
-    var latlng = new google.maps.LatLng(7.21,79.84);
+    var latlng = new google.maps.LatLng(7.1,79.84);
     var myOptions =
     {
         zoom: 8,
@@ -90,10 +90,16 @@ function clicked() {
   let fHumidityThree = $(".f-day3-hum");
   let fWsThree = $(".f-day3-ws");
 
+  let aqIndex = $(".air-quality-index");
+  let co = $(".co");
+  let no2 = $(".no2");
+  let o3 = $(".03");
+  let so2 = $(".so2");
+
   $.ajax({
     method: "GET",
     url:
-      "http://api.weatherapi.com/v1/forecast.json?days=3&key=" +
+      "http://api.weatherapi.com/v1/forecast.json?&aqi=yes&days=3&key=" +
       apiKey +
       `&q=${searchTxt.val()}`,
     success: (resp) => {
@@ -112,6 +118,11 @@ function clicked() {
       fIconThree.attr("src",resp.forecast.forecastday[2].day.condition.icon);
       fHumidityThree.html(resp.forecast.forecastday[2].day.avghumidity + "%");
       fWsThree.html(resp.forecast.forecastday[2].day.maxwind_kph + "km/h");
+
+      co.html(resp.current.air_quality.co + " μg/m3");
+      no2.html(resp.current.air_quality.no2 + " μg/m3");
+      o3.html(resp.current.air_quality.o3 + " μg/m3");
+      so2.html(resp.current.air_quality.so2 + " μg/m3");
     },
   });
 }
