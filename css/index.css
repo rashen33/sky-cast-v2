@@ -19,6 +19,7 @@ body {
   background-color: #55b5ff;
   border-radius: 40px;
   margin-top: 15px;
+  width: 100%;
 }
 
 .navbar-brand {
@@ -54,7 +55,6 @@ body {
   height: 382px;
   background-color: #55b5ff;
   border-radius: 40px;
-  margin: 20px 0 20px 40px;
 }
 
 /* Search Bar and button */
@@ -252,7 +252,7 @@ body {
 
 /* All contaiers at the right */
 
-.container{
+.containerR{
   width: 810px;
   height: 210px;
   background-color: #55b5ff;
@@ -262,7 +262,7 @@ body {
 
 /* Topic */
 
-.container .topic{
+.containerR .topic{
   color: #fff;
   font-weight: bold;
   margin: 10px 0px 10px 20px;
@@ -385,8 +385,14 @@ body {
 }
 
 .footer{
+  max-width: 100%;
   position: fixed;
   color: #fff;
   bottom: 0;
   width: 100%;
+}
+
+.first-row{
+  display: flex;
+  justify-content:space-between;
 }
