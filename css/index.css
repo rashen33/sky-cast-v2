@@ -385,6 +385,7 @@ body {
 
 .footer{
   position: fixed;
+  color: #fff;
   bottom: 0;
   width: 100%;
 }
