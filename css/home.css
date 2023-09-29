@@ -428,3 +428,55 @@ ul {
         margin: 65px auto;
     }
   }
+
+  @media (max-width: 690px){
+    .main-detail-card{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 600px;
+    }
+
+    .weather-map {
+        width: 382px;
+      }
+
+    .row-2,.row-3,.row-4{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .containerR{
+        width: 383px;
+        height: 300px;
+    }
+
+    .forcast-comp-container{
+        overflow-x: auto; 
+        white-space: nowrap;
+        margin: 0 25px;
+
+    }
+
+    .history-comp{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+      }
+
+    .img-history img{
+        width: 90px;
+    }
+
+    .his-details{
+        margin: 45px 5px;
+    }
+
+    .data{
+        margin: 65px auto;
+    }
+  }
