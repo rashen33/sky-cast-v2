@@ -1,27 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/home.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/home.css" />
     <title>SkyCast</title>
-</head>
-<body>
+  </head>
+  <body>
     <nav class="navbar">
-        <div class="logo">
-            <a href="#">SkyCast</a>
-        </div>
-        <div class="menu-toggle">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
-        <ul class="menu">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Pricing</a></li>
-            <li><a href="#">About Us</a></li>
-        </ul>
+      <div class="logo">
+        <a href="#">SkyCast</a>
+      </div>
+      <div class="menu-toggle">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <ul class="menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">About Us</a></li>
+      </ul>
     </nav>
+
+    <section id="sec-1">
+      <div class="row-1">
+        <div class="current-weather">
+          <!-- Search Bar -->
+          <div class="search-bar">
+            <input type="text" placeholder="search city" id="search-bar" />
+            <button id="search-btn" onclick="clicked()">
+              <img src="assets/search.png" alt="search" />
+            </button>
+          </div>
+
+          <div class="current-weather-topic">
+            <span>Current Weather</span>
+          </div>
+
+          <div class="main-detail-card">
+            <!-- Now weather section -->
+            <div class="weather-icon-card">
+              <div class="weather-details">
+                <img
+                  src="assets/113.png"
+                  alt="weather-icon"
+                  id="weather-icon"
+                />
+                <p class="weather-desc">Partly cloudy</p>
+                <p class="city" id="searched-city">Negombo</p>
+                <p class="date-and-time">2023-09-20 18:37</p>
+              </div>
+            </div>
+
+            <!-- Temp humidity and wind speed card -->
+            <div class="temp-humidity-ws-card">
+              <!-- Temp -->
+              <div class="temp">
+                <h1 id="current-temp">25 °C</h1>
+              </div>
+
+              <!-- Humidity and wind speed card -->
+              <div class="humitity-ws">
+                <!-- Humidity -->
+                <div class="humidity">
+                  <img src="assets/humidity.png" alt="humidity" />
+                  <div class="hum-details">
+                    <p id="current_humidity">25%</p>
+                    <p>Humidity</p>
+                  </div>
+                </div>
+
+                <div class="wind-speed">
+                  <img src="assets/wind.png" alt="wind" />
+                  <div class="ws-details">
+                    <p id="current-ws">12km/h</p>
+                    <p class="www">Wind Speed</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
     <script src="js/index.js"></script>
-</body>
+  </body>
 </html>
