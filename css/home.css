@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the navigation bar */
+.navbar {
+    position: sticky;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #55b5ff;
+  color: white;
+  padding: 20px 20px;
+}
+
+/* Style the company logo */
+.logo a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+/* Style the navigation menu for larger screens */
+.menu {
+  list-style: none;
+  display: flex;
+}
+
+.menu li {
+  margin-right: 50px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Style the hamburger menu for smaller screens */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 3px 0;
+}
+
+/* Media query for responsive design */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    background-color: #55b5ff;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+
+  .menu li {
+    margin: 10px auto;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}

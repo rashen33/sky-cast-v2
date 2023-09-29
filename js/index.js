@@ -1,6 +1,16 @@
 "use strict";
-//Getting the map data
+//Nav bar
+// JavaScript to toggle the mobile menu
+const menuToggle = document.querySelector(".menu-toggle");
+const menu = document.querySelector(".menu");
 
+menuToggle.addEventListener("click", () => {
+    menu.classList.toggle("active");
+});
+
+
+
+//Getting the map data
 var map;
 var geocoder;
 function InitializeMap(lat,lon) {
