@@ -468,8 +468,13 @@ ul {
     }
 
     .forcast-comp-container::-webkit-scrollbar{
-        width: 5px;
+        width: 0px;
     }
+
+    .his-details::-webkit-scrollbar{
+        width: 0px;
+    }
+
     .forcast-comp{
         width: 150px;
         margin-left: 10px;
