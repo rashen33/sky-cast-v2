@@ -111,36 +111,30 @@ function clicked() {
   $.ajax({
     method: "GET",
     url:
-      "http://api.weatherapi.com/v1/forecast.json?&aqi=yes&days=4&key=" +
+      "http://api.weatherapi.com/v1/forecast.json?&aqi=yes&days=5&key=" +
       apiKey +
       `&q=${searchTxt.val()}`,
     success: (resp) => {
       console.log(resp);
-      dayOne.html(resp.forecast.forecastday[0].date);
-      fIconOne.attr("src", resp.forecast.forecastday[0].day.condition.icon);
-      fHumidityOne.html(resp.forecast.forecastday[0].day.avghumidity + "%");
-      fWsOne.html(resp.forecast.forecastday[0].day.maxwind_kph + "km/h");
+      dayOne.html(resp.forecast.forecastday[1].date);
+      fIconOne.attr("src", resp.forecast.forecastday[2].day.condition.icon);
+      fHumidityOne.html(resp.forecast.forecastday[1].day.avghumidity + "%");
+      fWsOne.html(resp.forecast.forecastday[1].day.maxwind_kph + "km/h");
 
-      dayTwo.html(resp.forecast.forecastday[1].date);
-      fIconTwo.attr("src", resp.forecast.forecastday[1].day.condition.icon);
-      console.log(
-        fIconTwo.attr("src", resp.forecast.forecastday[1].day.condition.icon)
-      );
-      fHumidityTwo.html(resp.forecast.forecastday[1].day.avghumidity + "%");
-      fWsTwo.html(resp.forecast.forecastday[1].day.maxwind_kph + "km/h");
+      dayTwo.html(resp.forecast.forecastday[2].date);
+      fIconTwo.attr("src", resp.forecast.forecastday[2].day.condition.icon);
+      fHumidityTwo.html(resp.forecast.forecastday[2].day.avghumidity + "%");
+      fWsTwo.html(resp.forecast.forecastday[2].day.maxwind_kph + "km/h");
 
-      dayThree.html(resp.forecast.forecastday[2].date);
-      fIconThree.attr(resp.forecast.forecastday[2].day.condition.icon);
-      console.log(
-        fIconThree.attr("src", resp.forecast.forecastday[2].day.condition.icon)
-      );
-      fHumidityThree.html(resp.forecast.forecastday[2].day.avghumidity + "%");
-      fWsThree.html(resp.forecast.forecastday[2].day.maxwind_kph + "km/h");
+      dayThree.html(resp.forecast.forecastday[3].date);
+      fIconThree.attr(resp.forecast.forecastday[3].day.condition.icon);
+      fHumidityThree.html(resp.forecast.forecastday[3].day.avghumidity + "%");
+      fWsThree.html(resp.forecast.forecastday[3].day.maxwind_kph + "km/h");
 
-      dayFour.html(resp.forecast.forecastday[3].date);
-      fIconFour.attr("src", resp.forecast.forecastday[3].day.condition.icon);
-      fHumidityFour.html(resp.forecast.forecastday[3].day.avghumidity + "%");
-      fWsFour.html(resp.forecast.forecastday[3].day.maxwind_kph + "km/h");
+      dayFour.html(resp.forecast.forecastday[4].date);
+      fIconFour.attr("src", resp.forecast.forecastday[4].day.condition.icon);
+      fHumidityFour.html(resp.forecast.forecastday[4].day.avghumidity + "%");
+      fWsFour.html(resp.forecast.forecastday[4].day.maxwind_kph + "km/h");
 
       co.html(resp.current.air_quality.co + " μg/m3");
       no2.html(resp.current.air_quality.no2 + " μg/m3");
