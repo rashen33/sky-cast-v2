@@ -435,13 +435,13 @@ ul {
     margin: 65px auto;
   }
 
-  .form-div{
+  .form-div {
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  .form-div .contact-us-form{
+  .form-div .contact-us-form {
     width: 600px;
   }
 }
@@ -517,52 +517,51 @@ ul {
     margin: 65px auto;
   }
 
-  .form-div{
+  .form-div {
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  .form-div .contact-us-form{
+  .form-div .contact-us-form {
     width: 400px;
   }
 }
 
-
 /* Contact Us */
-#sec-2{
+#sec-2 {
   color: #fff;
 }
 
-#sec-2 h2{
+#sec-2 h2 {
   margin-top: 30px;
   margin-bottom: 20px;
 }
 
-#sec-2 p{
+#sec-2 p {
   font-weight: bold;
 }
 
-.form-div{
+.form-div {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-#contact-us{
+#contact-us {
   width: auto;
   height: 100vh;
   display: flex;
   color: #fff;
 }
 
-#contact-us h2{
+#contact-us h2 {
   padding: 20px;
   margin: 20px;
 }
 
-.contact-us-form{
+.contact-us-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -571,42 +570,44 @@ ul {
   margin: auto auto;
 }
 
-.contact-us-form input,textarea{
+.contact-us-form input,
+textarea {
   margin: 10px 0;
   padding: 5px;
   border: none;
   border-radius: 10px;
 }
 
-.contact-us-form button{
-  margin:10px 0;
+.contact-us-form button {
+  margin: 10px 0;
   padding: 5px;
   border: none;
   border-radius: 10px;
-
 }
 
-#sec-3{
+#sec-3 {
   width: 100%;
   height: 100vh;
   display: flex;
-  background-color: ##86c0ff;
+  background-color: #86c0ff;
   justify-content: center;
   align-items: center;
 }
-#sec-3 .container img{
+
+#sec-3 .container img {
   height: auto;
   width: 500px;
   max-width: 100%;
 }
-.about-us{
+.about-us {
   width: 550px;
   max-width: 100%;
   padding: 0 10px;
 }
 
 /* About us */
-#sec-2,#sec-3{
+#sec-2,
+#sec-3 {
   min-height: 100vh;
   width: 100%;
   display: flex;
@@ -614,7 +615,7 @@ ul {
   justify-content: center;
 }
 
-#sec-3 .container{
+#sec-3 .container {
   width: 1280px;
   max-width: 95%;
   margin: 0 auto;
@@ -623,13 +624,13 @@ ul {
   align-items: center;
   justify-content: space-around;
 }
-.about-us h1{
+.about-us h1 {
   font-size: 65px;
   margin-bottom: 20px;
   text-transform: capitalize;
 }
 
-.about-us p{
+.about-us p {
   font-size: 18px;
   line-height: 26px;
   letter-spacing: 1px;
@@ -637,20 +638,19 @@ ul {
 }
 
 @media screen and (max-width: 1180px) {
-  #sec-3 .container{
-      width: 100%;
-      height: auto;
-      padding: 70px 0px;
+  #sec-3 .container {
+    width: 100%;
+    height: auto;
+    padding: 70px 0px;
   }
 }
 
 @media screen and (max-width: 650px) {
-  #sec-3 .container img{
-      margin-bottom: 30px;
+  #sec-3 .container img {
+    margin-bottom: 30px;
   }
-  .about-us h1{
-      font-size: 60px;
-      margin-bottom: 35px;
+  .about-us h1 {
+    font-size: 60px;
+    margin-bottom: 35px;
   }
-  
 }
