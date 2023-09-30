@@ -1,44 +1,54 @@
 "use strict";
+//Nav bar
+// JavaScript to toggle the mobile menu
+const menuToggle = document.querySelector(".menu-toggle");
+const menu = document.querySelector(".menu");
+
+menuToggle.addEventListener("click", () => {
+    menu.classList.toggle("active");
+});
+
+
+
 //Getting the map data
+// var map;
+// var geocoder;
+// function InitializeMap(lat,lon) {
 
-var map;
-var geocoder;
-function InitializeMap(lat,lon) {
+//     var latlng = new google.maps.LatLng(7.1,79.84);
+//     var myOptions =
+//     {
+//         zoom: 8,
+//         center: latlng,
+//         mapTypeId: google.maps.MapTypeId.ROADMAP,
+//         disableDefaultUI: true
+//     };
+//     map = new google.maps.Map(document.getElementById("map"), myOptions);
+// }
 
-    var latlng = new google.maps.LatLng(7.1,79.84);
-    var myOptions =
-    {
-        zoom: 8,
-        center: latlng,
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
-        disableDefaultUI: true
-    };
-    map = new google.maps.Map(document.getElementById("map"), myOptions);
-}
+// function FindLocaiton(lat,lon) {
+//     geocoder = new google.maps.Geocoder();
+//     InitializeMap();
 
-function FindLocaiton(lat,lon) {
-    geocoder = new google.maps.Geocoder();
-    InitializeMap();
+//     var address = document.getElementById("addressinput").value;
+//     geocoder.geocode({ 'address': address }, function (results, status) {
+//         if (status == google.maps.GeocoderStatus.OK) {
+//             map.setCenter(results[0].geometry.location);
+//             var marker = new google.maps.Marker({
+//                 map: map,
+//                 position: results[0].geometry.location
+//             });
 
-    var address = document.getElementById("addressinput").value;
-    geocoder.geocode({ 'address': address }, function (results, status) {
-        if (status == google.maps.GeocoderStatus.OK) {
-            map.setCenter(results[0].geometry.location);
-            var marker = new google.maps.Marker({
-                map: map,
-                position: results[0].geometry.location
-            });
+//         }
+//         else {
+//             alert("Geocode was not successful for the following reason: " + status);
+//         }
+//     });
 
-        }
-        else {
-            alert("Geocode was not successful for the following reason: " + status);
-        }
-    });
-
-}
+// }
 
 
-window.onload = InitializeMap;
+// window.onload = InitializeMap;
 
 // Taking the current data
 
@@ -63,7 +73,7 @@ function clicked() {
       apiKey +
       `&q=${searchTxt.val()}`,
     success: (resp) => {
-      FindLocaiton(resp.location.lat,resp.location.lon);
+      // FindLocaiton(resp.location.lat,resp.location.lon);
       searchedCity.html(resp.location.name);
       weatherIcon.attr("src", resp.current.condition.icon);
       weatherDesc.html(resp.current.condition.text);

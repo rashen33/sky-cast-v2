@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/home.css" />
+    <title>SkyCast</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="#">SkyCast</a>
+      </div>
+      <div class="menu-toggle">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <ul class="menu">
+        <li><a href="#sec-1">Home</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">About Us</a></li>
+      </ul>
+    </nav>
+
+    <section id="sec-1">
+      <div class="row-1">
+        <!-- Current Weather Card -->
+        <div class="current-weather">
+          <!-- Search Bar -->
+          <div class="search-bar">
+            <input type="text" placeholder="search city" id="search-bar" />
+            <button id="search-btn" onclick="clicked()">
+              <img src="assets/search.png" alt="search" />
+            </button>
+          </div>
+
+          <div class="current-weather-topic">
+            <span>Current Weather</span>
+          </div>
+
+          <div class="main-detail-card">
+            <!-- Now weather section -->
+            <div class="weather-icon-card">
+              <div class="weather-details">
+                <img
+                  src="assets/113.png"
+                  alt="weather-icon"
+                  id="weather-icon"
+                />
+                <p class="weather-desc">Partly cloudy</p>
+                <p class="city" id="searched-city">Negombo</p>
+                <p class="date-and-time">2023-09-20 18:37</p>
+              </div>
+            </div>
+
+            <!-- Temp humidity and wind speed card -->
+            <div class="temp-humidity-ws-card">
+              <!-- Temp -->
+              <div class="temp">
+                <h1 id="current-temp">25 °C</h1>
+              </div>
+
+              <!-- Humidity and wind speed card -->
+              <div class="humitity-ws">
+                <!-- Humidity -->
+                <div class="humidity">
+                  <img src="assets/humidity.png" alt="humidity" />
+                  <div class="hum-details">
+                    <p id="current_humidity">25%</p>
+                    <p>Humidity</p>
+                  </div>
+                </div>
+
+                <div class="wind-speed">
+                  <img src="assets/wind.png" alt="wind" />
+                  <div class="ws-details">
+                    <p id="current-ws">12km/h</p>
+                    <p class="www">Wind Speed</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Map -->
+        <div class="weather-map">
+          <div id="map" style="height: 282px"></div>
+        </div>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="row-2">
+        <div class="containerR">
+          <div class="topic">
+            <span>Forcast</span>
+          </div>
+
+          <div class="forcast-comp-container">
+            <!-- Forcast Components -->
+            <div class="forcast-comp first">
+              <div class="comp-topic">
+                <span class="date-1">Mon</span>
+              </div>
+
+              <div class="details">
+                <div class="img">
+                  <img
+                    class="forcast-day1-icon"
+                    src="assets/113.png"
+                    alt="weather-icon"
+                  />
+                </div>
+
+                <div class="hum-ws">
+                  <p class="f-day1-hum">50%</p>
+                  <p>Humidity</p>
+                  <p class="f-day1-ws">12km/h</p>
+                  <p>Wind Speed</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="forcast-comp">
+              <div class="comp-topic">
+                <span class="date-2">Tus</span>
+              </div>
+
+              <div class="details">
+                <div class="img">
+                  <img
+                    class="forcast-day2-icon"
+                    src="assets/113.png"
+                    alt="weather-icon"
+                  />
+                </div>
+
+                <div class="hum-ws">
+                  <p class=".f-day2-hum">50%</p>
+                  <p>Humidity</p>
+                  <p class=".f-day2-ws">12km/h</p>
+                  <p>Wind Speed</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="forcast-comp">
+              <div class="comp-topic">
+                <span class="date-3">Wed</span>
+              </div>
+
+              <div class="details">
+                <div class="img">
+                  <img
+                    class=".forcast-day3-icon"
+                    src="assets/113.png"
+                    alt="weather-icon"
+                  />
+                </div>
+
+                <div class="hum-ws">
+                  <p class=".f-day3-hum">50%</p>
+                  <p>Humidity</p>
+                  <p class="f-day3-ws">12km/h</p>
+                  <p>Wind Speed</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="forcast-comp">
+              <div class="comp-topic">
+                <span class="date-4">Tue</span>
+              </div>
+
+              <div class="details">
+                <div class="img">
+                  <img
+                    class=".forcast-day4-icon"
+                    src="assets/113.png"
+                    alt="weather-icon"
+                  />
+                </div>
+
+                <div class="hum-ws">
+                  <p class=".f-day4-hum">50%</p>
+                  <p>Humidity</p>
+                  <p class="f-day4-ws">12km/h</p>
+                  <p>Wind Speed</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row-3">
+        <!-- History -->
+        <div class="containerR history">
+          <!-- Main topic  -->
+          <div class="topic">
+            <span>History</span>
+          </div>
+
+          <div class="details his-details">
+            <!-- History Component -->
+            <div class="history-comp">
+              <div class="comp-topic">
+                <span>Mon</span>
+              </div>
+
+              <div class="img-history">
+                <img src="assets/113.png" alt="weather-icon" />
+              </div>
+            </div>
+
+            <!-- History Component -->
+            <div class="history-comp">
+              <div class="comp-topic">
+                <span>Tus</span>
+              </div>
+
+              <div class="img-history">
+                <img src="assets/113.png" alt="weather-icon" />
+              </div>
+            </div>
+
+            <!-- History Component -->
+            <div class="history-comp">
+              <div class="comp-topic">
+                <span>Wed</span>
+              </div>
+
+              <div class="img-history">
+                <img src="assets/113.png" alt="weather-icon" />
+              </div>
+            </div>
+
+            <!-- History Component -->
+            <div class="history-comp">
+              <div class="comp-topic">
+                <span>Thus</span>
+              </div>
+
+              <div class="img-history">
+                <img src="assets/113.png" alt="weather-icon" />
+              </div>
+            </div>
+
+            <!-- History Component -->
+            <div class="history-comp">
+              <div class="comp-topic">
+                <span>Fri</span>
+              </div>
+
+              <div class="img-history">
+                <img src="assets/113.png" alt="weather-icon" />
+              </div>
+            </div>
+
+            <!-- History Component -->
+            <div class="history-comp">
+              <div class="comp-topic">
+                <span>Sat</span>
+              </div>
+
+              <div class="img-history">
+                <img src="assets/113.png" alt="weather-icon" />
+              </div>
+            </div>
+
+            <!-- History Component -->
+            <div class="history-comp">
+              <div class="comp-topic">
+                <span>Sun</span>
+              </div>
+
+              <div class="img-history">
+                <img src="assets/113.png" alt="weather-icon" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row-4">
+        <!-- Air Quality -->
+        <div class="containerR air-qulity">
+          <div class="topic">
+            <span>Air Quality</span>
+          </div>
+
+          <div class="data">
+            <div class="sub-data">
+              <h2>CO</h2>
+              <p class="co">201.941 μg/m3</p>
+            </div>
+            <div class="sub-data">
+              <h2>NO2</h2>
+              <p class="no2">201.941 μg/m3</p>
+            </div>
+            <div class="sub-data">
+              <h2>O3</h2>
+              <p class="03">201.941 μg/m3</p>
+            </div>
+            <div class="sub-data">
+              <h2>So2</h2>
+              <p class="so2">201.941 μg/m3</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
