@@ -460,7 +460,7 @@ ul {
         margin-left: 360px;
     }
 
-    .forcast-comp-container{
+    .forcast-comp-container,.his-details{
         display: flex;
         flex-wrap: nowrap;
         margin: 0 25px;
@@ -479,12 +479,9 @@ ul {
 
     .history-comp{
         display: flex;
-        flex-wrap: wrap;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin: auto;
-      }
+        height: auto;
+    }
 
     .img-history img{
         width: 90px;
