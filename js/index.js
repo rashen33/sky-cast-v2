@@ -5,10 +5,8 @@ const menuToggle = document.querySelector(".menu-toggle");
 const menu = document.querySelector(".menu");
 
 menuToggle.addEventListener("click", () => {
-    menu.classList.toggle("active");
+  menu.classList.toggle("active");
 });
-
-
 
 //Getting the map data
 // var map;
@@ -46,7 +44,6 @@ menuToggle.addEventListener("click", () => {
 //     });
 
 // }
-
 
 // window.onload = InitializeMap;
 
@@ -93,8 +90,8 @@ function clicked() {
   let dayTwo = $(".date-2");
   let fIconTwo = $(".forcast-day2-icon");
   let fHumidityTwo = $(".f-day2-hum");
-  let fWsTwo = $(".f-day2-ws");  
-  
+  let fWsTwo = $(".f-day2-ws");
+
   let dayThree = $(".date-3");
   let fIconThree = $(".forcast-day3-icon3");
   let fHumidityThree = $(".f-day3-hum");
@@ -120,24 +117,28 @@ function clicked() {
     success: (resp) => {
       console.log(resp);
       dayOne.html(resp.forecast.forecastday[0].date);
-      fIconOne.attr("src",resp.forecast.forecastday[0].day.condition.icon);
+      fIconOne.attr("src", resp.forecast.forecastday[0].day.condition.icon);
       fHumidityOne.html(resp.forecast.forecastday[0].day.avghumidity + "%");
       fWsOne.html(resp.forecast.forecastday[0].day.maxwind_kph + "km/h");
-      
+
       dayTwo.html(resp.forecast.forecastday[1].date);
-      fIconTwo.attr("src",resp.forecast.forecastday[1].day.condition.icon);
-      console.log(fIconTwo.attr("src",resp.forecast.forecastday[1].day.condition.icon));
+      fIconTwo.attr("src", resp.forecast.forecastday[1].day.condition.icon);
+      console.log(
+        fIconTwo.attr("src", resp.forecast.forecastday[1].day.condition.icon)
+      );
       fHumidityTwo.html(resp.forecast.forecastday[1].day.avghumidity + "%");
       fWsTwo.html(resp.forecast.forecastday[1].day.maxwind_kph + "km/h");
 
       dayThree.html(resp.forecast.forecastday[2].date);
       fIconThree.attr(resp.forecast.forecastday[2].day.condition.icon);
-      console.log(fIconThree.attr("src",resp.forecast.forecastday[2].day.condition.icon));
+      console.log(
+        fIconThree.attr("src", resp.forecast.forecastday[2].day.condition.icon)
+      );
       fHumidityThree.html(resp.forecast.forecastday[2].day.avghumidity + "%");
       fWsThree.html(resp.forecast.forecastday[2].day.maxwind_kph + "km/h");
 
       dayFour.html(resp.forecast.forecastday[3].date);
-      fIconFour.attr("src",resp.forecast.forecastday[3].day.condition.icon);
+      fIconFour.attr("src", resp.forecast.forecastday[3].day.condition.icon);
       fHumidityFour.html(resp.forecast.forecastday[3].day.avghumidity + "%");
       fWsFour.html(resp.forecast.forecastday[3].day.maxwind_kph + "km/h");
 
@@ -145,6 +146,71 @@ function clicked() {
       no2.html(resp.current.air_quality.no2 + " μg/m3");
       o3.html(resp.current.air_quality.o3 + " μg/m3");
       so2.html(resp.current.air_quality.so2 + " μg/m3");
+    },
+  });
+
+  // History
+  var currenDate = new Date();
+  console.log(currenDate + " today");
+
+  var yearC = currenDate.getFullYear();
+  var monthC = String(currenDate.getMonth() + 1).padStart(2, "0"); // Adding 1 to month because it is zero-based
+  var dayC = String(currenDate.getDate()).padStart(2, "0");
+
+  var formattedDateC = yearC + "-" + monthC + "-" + dayC;
+  console.log(formattedDateC + " Curr day");
+
+  // Subtract 5 days (5 * 24 * 60 * 60 * 1000 milliseconds) from the current date
+  var sevenDaysAgo = new Date(currenDate.getTime() - 7 * 24 * 60 * 60 * 1000);
+
+  // Extract the year, month, and day components from the sevenDaysAgo date
+  var year = sevenDaysAgo.getFullYear();
+  var month = String(sevenDaysAgo.getMonth() + 1).padStart(2, "0"); // Adding 1 to month because it is zero-based
+  var day = String(sevenDaysAgo.getDate()).padStart(2, "0");
+
+  // Create the "yyyy-mm-dd" formatted string
+  var formattedDate = year + "-" + month + "-" + day;
+  console.log(formattedDate + " 7 days back");
+
+  const dayH1 = $(".day-1");
+  const dayH2 = $(".day-2");
+  const dayH3 = $(".day-3");
+  const dayH4 = $(".day-4");
+  const dayH5 = $(".day-5");
+  const dayH6 = $(".day-6");
+  const dayH7 = $(".day-7");
+
+  const dayH1Icon = $(".day1-h-icon");
+  const dayH2Icon = $(".day2-h-icon");
+  const dayH3Icon = $(".day3-h-icon");
+  const dayH4Icon = $(".day4-h-icon");
+  const dayH5Icon = $(".day5-h-icon");
+  const dayH6Icon = $(".day6-h-icon");
+  const dayH7Icon = $(".day7-h-icon");
+
+
+  $.ajax({
+    method: "GET",
+    url: `https://api.weatherapi.com/v1/history.json?&dt=${formattedDate}&end_dt=${formattedDateC}&key=${apiKey}&q=${searchTxt.val()}`,
+    success: (res2) => {
+      console.log(res2);
+
+      dayH1.html(res2.forecast.forecastday[0].date); 
+      dayH2.html(res2.forecast.forecastday[1].date); 
+      dayH3.html(res2.forecast.forecastday[2].date); 
+      dayH4.html(res2.forecast.forecastday[3].date); 
+      dayH5.html(res2.forecast.forecastday[4].date); 
+      dayH6.html(res2.forecast.forecastday[5].date); 
+      dayH7.html(res2.forecast.forecastday[6].date); 
+
+
+      dayH1Icon.attr("src",res2.forecast.forecastday[0].day.condition.icon);
+      dayH2Icon.attr("src",res2.forecast.forecastday[1].day.condition.icon);
+      dayH3Icon.attr("src",res2.forecast.forecastday[2].day.condition.icon);
+      dayH4Icon.attr("src",res2.forecast.forecastday[3].day.condition.icon);
+      dayH5Icon.attr("src",res2.forecast.forecastday[4].day.condition.icon);
+      dayH6Icon.attr("src",res2.forecast.forecastday[5].day.condition.icon);
+      dayH7Icon.attr("src",res2.forecast.forecastday[6].day.condition.icon);
     },
   });
 }
