@@ -7,6 +7,10 @@
   scroll-behavior: smooth;
 }
 
+body{
+    background-color: #86c0ff;
+}
+
 body,
 ul {
   margin: 0;
@@ -449,14 +453,28 @@ ul {
     }
     .containerR{
         width: 383px;
-        height: 300px;
+        height: auto;
+    }
+
+    .forcast-comp-container .first{
+        margin-left: 360px;
     }
 
     .forcast-comp-container{
-        overflow-x: auto; 
-        white-space: nowrap;
+        display: flex;
+        flex-wrap: nowrap;
         margin: 0 25px;
+        overflow-x: auto;
+    }
 
+    .forcast-comp-container::-webkit-scrollbar{
+        width: 5px;
+    }
+    .forcast-comp{
+        width: 150px;
+        margin-left: 10px;
+        margin-right: 10px;
+        height: auto;
     }
 
     .history-comp{
