@@ -8,47 +8,6 @@ menuToggle.addEventListener("click", () => {
   menu.classList.toggle("active");
 });
 
-//Getting the map data
-// var map;
-// var geocoder;
-// function InitializeMap(lat,lon) {
-
-//     var latlng = new google.maps.LatLng(7.1,79.84);
-//     var myOptions =
-//     {
-//         zoom: 8,
-//         center: latlng,
-//         mapTypeId: google.maps.MapTypeId.ROADMAP,
-//         disableDefaultUI: true
-//     };
-//     map = new google.maps.Map(document.getElementById("map"), myOptions);
-// }
-
-// function FindLocaiton(lat,lon) {
-//     geocoder = new google.maps.Geocoder();
-//     InitializeMap();
-
-//     var address = document.getElementById("addressinput").value;
-//     geocoder.geocode({ 'address': address }, function (results, status) {
-//         if (status == google.maps.GeocoderStatus.OK) {
-//             map.setCenter(results[0].geometry.location);
-//             var marker = new google.maps.Marker({
-//                 map: map,
-//                 position: results[0].geometry.location
-//             });
-
-//         }
-//         else {
-//             alert("Geocode was not successful for the following reason: " + status);
-//         }
-//     });
-
-// }
-
-// window.onload = InitializeMap;
-
-// Taking the current data
-
 const apiKey = "6bac593baa7c4af4b82154952231909";
 const apiURL = "http://api.weatherapi.com/v1/current.json?Key=";
 
@@ -61,6 +20,42 @@ const dateAndTime = $(".date-and-time");
 const currentTemp = $("#current-temp");
 const currentWs = $("#current-ws");
 const currentHumidity = $("#current_humidity");
+
+//Getting the map data
+var map = L.map("map-load").setView([51.505, -0.09], 13);
+L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  maxZoom: 13,
+  attribution:
+    '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+}).addTo(map);
+
+navigator.geolocation.watchPosition(success, error);
+
+let marker, circle;
+
+function success(pos) {
+  const lat = pos.coords.latitude;
+  const lng = pos.coords.longitude;
+  const accuracy = pos.coords.accuracy;
+
+  if (marker) {
+    map.removeLayer(marker);
+    map.removeLayer(circle);
+  }
+
+  marker = L.marker([lat, lng]).addTo(map);
+  circle = L.circle([lat, lng], { radius: accuracy }).addTo(map);
+
+  map.fitBounds(circle.getBounds());
+}
+
+function error(err) {
+  if (err.code === 1) {
+    alert("Please allow geolocation access");
+  } else {
+    alert("Cannot get current location");
+  }
+}
 
 function clicked() {
   $.ajax({
@@ -78,8 +73,23 @@ function clicked() {
       currentTemp.html(resp.current.temp_c + " °C");
       currentWs.html(resp.current.wind_kph + " kmp/h");
       currentHumidity.html(resp.current.humidity + " %");
+
+      // resp.location.lat, resp.location.lon
+      getLocation(resp.location.lat, resp.location.lon);
     },
   });
+
+  function getLocation(lat, long) {
+
+    $("#map-load").html("<div id='map' style='width: 100%; height: 100%;'></div>")
+    var map = L.map("map").setView([lat, long], 13);
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 13,
+      attribution:
+        '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    }).addTo(map);
+    var marker = L.marker([lat, long]).addTo(map);
+  }
 
   //Weather forcast
   let dayOne = $(".date-1");
@@ -182,29 +192,27 @@ function clicked() {
   const dayH6Icon = $(".day6-h-icon");
   const dayH7Icon = $(".day7-h-icon");
 
-
   $.ajax({
     method: "GET",
     url: `https://api.weatherapi.com/v1/history.json?&dt=${formattedDate}&end_dt=${formattedDateC}&key=${apiKey}&q=${searchTxt.val()}`,
     success: (res2) => {
       console.log(res2);
 
-      dayH1.html(res2.forecast.forecastday[0].date); 
-      dayH2.html(res2.forecast.forecastday[1].date); 
-      dayH3.html(res2.forecast.forecastday[2].date); 
-      dayH4.html(res2.forecast.forecastday[3].date); 
-      dayH5.html(res2.forecast.forecastday[4].date); 
-      dayH6.html(res2.forecast.forecastday[5].date); 
-      dayH7.html(res2.forecast.forecastday[6].date); 
+      dayH1.html(res2.forecast.forecastday[0].date);
+      dayH2.html(res2.forecast.forecastday[1].date);
+      dayH3.html(res2.forecast.forecastday[2].date);
+      dayH4.html(res2.forecast.forecastday[3].date);
+      dayH5.html(res2.forecast.forecastday[4].date);
+      dayH6.html(res2.forecast.forecastday[5].date);
+      dayH7.html(res2.forecast.forecastday[6].date);
 
-
-      dayH1Icon.attr("src",res2.forecast.forecastday[0].day.condition.icon);
-      dayH2Icon.attr("src",res2.forecast.forecastday[1].day.condition.icon);
-      dayH3Icon.attr("src",res2.forecast.forecastday[2].day.condition.icon);
-      dayH4Icon.attr("src",res2.forecast.forecastday[3].day.condition.icon);
-      dayH5Icon.attr("src",res2.forecast.forecastday[4].day.condition.icon);
-      dayH6Icon.attr("src",res2.forecast.forecastday[5].day.condition.icon);
-      dayH7Icon.attr("src",res2.forecast.forecastday[6].day.condition.icon);
+      dayH1Icon.attr("src", res2.forecast.forecastday[0].day.condition.icon);
+      dayH2Icon.attr("src", res2.forecast.forecastday[1].day.condition.icon);
+      dayH3Icon.attr("src", res2.forecast.forecastday[2].day.condition.icon);
+      dayH4Icon.attr("src", res2.forecast.forecastday[3].day.condition.icon);
+      dayH5Icon.attr("src", res2.forecast.forecastday[4].day.condition.icon);
+      dayH6Icon.attr("src", res2.forecast.forecastday[5].day.condition.icon);
+      dayH7Icon.attr("src", res2.forecast.forecastday[6].day.condition.icon);
     },
   });
 }
