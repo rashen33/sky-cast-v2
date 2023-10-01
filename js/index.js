@@ -1,8 +1,15 @@
 "use strict";
 //Nav bar
 // JavaScript to toggle the mobile menu
+const body = document.querySelector("body");
 const menuToggle = document.querySelector(".menu-toggle");
 const menu = document.querySelector(".menu");
+const themeToggle = document.querySelector(".toggle-switch");
+
+themeToggle.addEventListener("click", () => {
+  body.classList.toggle("dark");
+});
+
 
 menuToggle.addEventListener("click", () => {
   menu.classList.toggle("active");

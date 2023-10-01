@@ -1,4 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap");
+
+:root{
+  --bg-main-color: #86c0ff;
+  --secondary-color: #55b5ff;
+  --about-us-color: black;
+}
+
+.dark{
+  --bg-main-color: #404040;
+  --secondary-color: #262626;
+  --about-us-color: white;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -8,7 +21,7 @@
 }
 
 body {
-  background-color: #86c0ff;
+  background-color: var(--bg-main-color);
 }
 
 body,
@@ -21,11 +34,43 @@ ul {
 .navbar {
   position: sticky;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  background-color: #55b5ff;
+  background-color: var(--secondary-color);
   color: white;
   padding: 20px 20px;
+}
+
+.toggle-switch{
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  width: 60px;
+  height: 30px;
+  border-radius: 20px;
+  
+}
+
+.toggle-switch .switch{
+  position: relative;
+  height: 22px;
+  width: 44px;
+  border-radius: 25px;
+  background: var(--bg-main-color);
+}
+
+.switch::before{
+  content: '';
+  position: absolute;
+  height: 15px; width: 15px;
+  border-radius: 50%;
+  top:50%;
+  left: 5px;
+  transform: translateY(-50%);
+  background: var(--secondary-color);
+}
+
+body.dark .switch::before{
+  left: 24px;
 }
 
 /* Style the company logo */
@@ -41,6 +86,7 @@ ul {
 .menu {
   list-style: none;
   display: flex;
+  margin-left: auto;
 }
 
 .menu li {
@@ -54,6 +100,8 @@ ul {
 
 /* Style the hamburger menu for smaller screens */
 .menu-toggle {
+  margin-left: auto;
+  margin-right: 10px;
   display: none;
   flex-direction: column;
   cursor: pointer;
@@ -71,7 +119,7 @@ ul {
   .menu {
     display: none;
     flex-direction: column;
-    background-color: #55b5ff;
+    background-color: var(--secondary-color);
     position: absolute;
     top: 60px;
     left: 0;
@@ -93,7 +141,7 @@ ul {
 }
 
 .current-weather {
-  background-color: #55b5ff;
+  background-color: var(--secondary-color);
   border-radius: 40px;
   margin: 20px auto 20px auto;
 }
@@ -121,10 +169,14 @@ ul {
 }
 
 .search-bar button img {
-  width: 20px;
+  width: 60%;
 }
 
 .search-bar button {
+  width: 45px; height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
   padding: 5px;
   border-color: transparent;
@@ -277,7 +329,7 @@ ul {
 .weather-map {
   width: 630px;
   height: 382px;
-  background-color: #55b5ff;
+  background-color: var(--secondary-color);
   border-radius: 40px;
   margin: 20px auto 20px auto;
 }
@@ -297,7 +349,7 @@ ul {
 .containerR {
   width: 950px;
   height: 230px;
-  background-color: #55b5ff;
+  background-color: var(--secondary-color);
   border-radius: 40px;
   margin: 20px auto 20px;
 }
@@ -589,16 +641,26 @@ textarea {
   width: 100%;
   height: 100vh;
   display: flex;
-  background-color: #86c0ff;
+  background-color: var(--bg-main-color);
   justify-content: center;
   align-items: center;
 }
 
-#sec-3 .container img {
-  height: auto;
-  width: 500px;
-  max-width: 100%;
+/* Logo Refactor Here */
+.logo{
+  display: flex;
+  flex-direction: column;
 }
+
+.logo > .part2 {
+  position: relative;
+  bottom: 10px;
+}
+
+.dark .part2{
+  filter: invert(100%);
+}
+
 .about-us {
   width: 550px;
   max-width: 100%;
@@ -628,6 +690,7 @@ textarea {
   font-size: 65px;
   margin-bottom: 20px;
   text-transform: capitalize;
+  color: var(--about-us-color);
 }
 
 .about-us p {
@@ -635,6 +698,8 @@ textarea {
   line-height: 26px;
   letter-spacing: 1px;
   margin-bottom: 45px;
+  color: var(--about-us-color);
+
 }
 
 @media screen and (max-width: 1180px) {
