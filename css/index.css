@@ -719,3 +719,21 @@ textarea {
     margin-bottom: 35px;
   }
 }
+@media screen and (max-width: 400px) {
+
+  .txt-name{
+    width: 370px;
+  }
+  .contact-us{
+    margin-left: 10px;
+  }
+  .form-div{
+    width: 380px;
+    margin-left: 5px;
+
+  }
+  .btnsub{
+    width: 370px;
+
+  }
+}
