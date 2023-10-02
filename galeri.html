@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+    <link rel="stylesheet" href="css/index.css">
+    <title>Gallery</title>
+    <style>
+      :root {
+            --bg-main-color: #86c0ff; /* Warna latar belakang utama (biru muda) */
+            --secondary-color: #55b5ff; /* Warna latar belakang sekunder */
+            --about-us-color: black; /* Warna teks untuk "about us" */
+        }
+
+        /* Menggunakan variabel CSS kustom */
+        body {
+            background-color: var(--bg-main-color); /* Latar belakang layar biru muda */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Contoh penggunaan variabel untuk elemen lain */
+        .navbar {
+            background-color: var(--secondary-color); /* Latar belakang navbar */
+            color: var(--about-us-color); /* Warna teks untuk elemen dengan class "navbar" */
+        }
+        /* CSS untuk styling galeri */
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px;
+            cursor: pointer;
+            text-align: center;
+        }
+    
+        .gallery img {
+            width: 150px;
+            height: 200px;
+            border: 2px solid #7ec0ee; /* Warna biru muda untuk border */
+        }
+
+        .gallery p {
+            margin-top: 5px;
+        }
+    
+        /* CSS untuk overlay gambar yang diperbesar */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(126, 192, 238, 0.7); /* Warna biru muda untuk background overlay */
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+        }
+    
+        .overlay img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+        p{
+            color: black;
+        }
+        
+        .overlay img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+        
+    </style>
+    
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+          <a href="#">Galeri</a>
+        </div>
+        <div class="menu-toggle">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+        <ul class="menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html">About</a></li>
+          <li><a href="galeri.html">Galeri</a></li>
+          <li><a href="index.html">Contact Us</a></li>
+        </ul>
+        <div class="toggle-switch">
+          <span class="switch"></span>
+        </div>
+      </nav>
+
+    <div class="gallery-container">
+        <!-- Gambar-gambar dalam galeri -->
+        <div class="gallery">
+            <img src="https://th.bing.com/th/id/OIP.bsXXOzlnpD6M-MVLPqL3JQHaE7?pid=ImgDet&rs=1" alt="Gambar 1" onclick="openOverlay('https://th.bing.com/th/id/OIP.bsXXOzlnpD6M-MVLPqL3JQHaE7?pid=ImgDet&rs=1')" />
+            <p>Cuaca Cerah</p>
+        </div>
+        <div class="gallery">
+            <img src="https://asset.kompas.com/crops/ibaoe_JypBADhZQrfjp6Emy9Zlk=/0x0:1000x667/750x500/data/photo/2021/05/31/60b4de5fce787.jpg" alt="Gambar 1" onclick="openOverlay('https://asset.kompas.com/crops/ibaoe_JypBADhZQrfjp6Emy9Zlk=/0x0:1000x667/750x500/data/photo/2021/05/31/60b4de5fce787.jpg')" />
+            <p>Cuaca Hujan</p>
+        </div>
+        <div class="gallery">
+            <img src="https://c.pxhere.com/photos/24/ce/photo-44776.jpg!d" alt="Gambar 1" onclick="openOverlay('https://c.pxhere.com/photos/24/ce/photo-44776.jpg!d')" />
+            <p>Cuaca Salju</p>
+        </div>
+        <!-- Tambahkan gambar-gambar cuaca lainnya di sini -->
+    </div>
+    <!-- Overlay untuk gambar yang diperbesar -->
+    <div class="overlay" id="overlay" onclick="closeOverlay()">
+        <span class="close-btn" onclick="closeOverlay()">&times;</span>
+        <img id="overlay-image" src="" alt="Gambar Diperbesar" />
+    </div>
+
+    <script>
+        // Fungsi untuk membuka overlay dengan gambar yang diperbesar
+        function openOverlay(imageSrc) {
+            const overlay = document.getElementById('overlay');
+            const overlayImage = document.getElementById('overlay-image');
+            overlayImage.src = imageSrc;
+            overlay.style.display = 'flex';
+        }
+
+        // Fungsi untuk menutup overlay
+        function closeOverlay() {
+            const overlay = document.getElementById('overlay');
+            overlay.style.display = 'none';
+        }
+    </script>
+     <script
+     src="https://code.jquery.com/jquery-3.7.1.js"
+     integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+     crossorigin="anonymous"
+   ></script>
+   <script src="js/index.js"></script>
+</body>
+</html>
