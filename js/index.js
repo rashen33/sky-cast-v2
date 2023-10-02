@@ -28,7 +28,7 @@ const currentTemp = $("#current-temp");
 const currentWs = $("#current-ws");
 const currentHumidity = $("#current_humidity");
 
-//Getting the map data
+//Getting the map data from leaflet
 var map = L.map("map-load").setView([51.505, -0.09], 13);
 L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 13,
