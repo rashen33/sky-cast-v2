@@ -1,4 +1,4 @@
-# SkyCast - A Weather Application
+# SkyCastv2 - A Weather Application
 
 ## Overview
 https://rashen33.github.io/sky-cast-v2/
