@@ -19,7 +19,7 @@ https://rashen33.github.io/sky-cast-v2/
 
 
 ## Purpose
-Weather Lookup is a web application designed to provide users with instant weather information for any country or city worldwide. The goal was to create a user-friendly and responsive platform for accessing weather data.
+Skycast is a web application designed to provide users with instant weather information for any country or city worldwide. The goal was to create a user-friendly and responsive platform for accessing weather data.
 
 ## Approach
 - **Tech Stack:** HTML, CSS, JavaScript, and jQuery were used for front-end development.
