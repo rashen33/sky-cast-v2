@@ -8,7 +8,7 @@ https://rashen33.github.io/sky-cast-v2/
 1. [SkyCast Lookup](#skycast-lookup)
    - [Purpose](##Purpose)
    - [Approach](#approach)
-   - [Key Features](#key-features)
+   - [Key Featuress](#key-features)
    - [Impact](#impact)
    - [Tech Stack](#tech-stack)
 
