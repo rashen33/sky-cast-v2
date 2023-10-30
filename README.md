@@ -10,7 +10,7 @@ https://rashen33.github.io/sky-cast-v2/
    - [Approach](#approach)
    - [Key Featuress](#key-features)
    - [Impact](#impact)
-   - [Tech Stack](#tech-stack)
+   - [Tech Stack](#tech-stackk)
 
 2. [SkyCast Contribution Guide](#skycast-contribution-guide)
    - [Reporting Issues](#reporting-issues)
