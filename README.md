@@ -105,5 +105,5 @@ That's it! You've contributed to SkyCast. The project maintainers will review yo
 
 Feel free to ask for help if you need assistance or have questions. Thank you for being a part of SkyCast's development!
 
-Happy contributing! 🌦️🌧️🌤️
+Happy contributing!!!! 🌦️🌧️🌤️
 
